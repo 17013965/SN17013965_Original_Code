@@ -1,0 +1,9 @@
+setwd("E:/Pharmacy Notes/PHAY60 Research Project/(1) RESEARCH PAPER/APP Protein Interaction Data (APP)")
+
+file.1<-read.table("Merge (6) Interactors Isolated.txt", header=TRUE, sep="\t")
+
+file.2<-read.table("Merge (6) Dictionary.txt", header=TRUE, sep="\t")
+
+results<-merge(file.1, file.2, by.x="ID.s..interactor.B", by.y=1, all.x=TRUE)
+
+write.table(results,"Result.txt", quote=FALSE, row.names=FALSE, sep="\t")
