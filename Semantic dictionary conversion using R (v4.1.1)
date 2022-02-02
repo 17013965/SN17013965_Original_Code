@@ -1,0 +1,7 @@
+file.1<-read.table("Data (1) Ab42 gProfiler.csv", header=TRUE, sep=",")
+
+file.2<-read.table("Data (1) Semantic Dictionary.txt", header=TRUE, sep="\t")
+
+results<-merge(file.1, file.2, by.x="term_id", by.y=1, all.x=TRUE)
+
+write.table(results,"Data (2) Ab42 Result.txt", quote=FALSE, row.names=FALSE, sep="\t")
